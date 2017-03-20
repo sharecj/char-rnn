@@ -1,4 +1,5 @@
 #coding=utf8
+import sys
 import time
 from collections import namedtuple
 
@@ -247,7 +248,7 @@ def sample(checkpoint, n_samples, lstm_size, vocab_size, prime="The "):
 if __name__ == '__main__':   
     if sys.argv[1] == 'train':
         train()
-    else:
-        checkpoint = "checkpoints/i5000_l512_v1.135.ckpt"
+    elif sys.argv[1] == 'sample':
+        checkpoint = "checkpoints/i7140_l512_v1.099.ckpt"
         samp = sample(checkpoint, 2000, lstm_size, len(vocab), prime="Man ")
         print(samp)
